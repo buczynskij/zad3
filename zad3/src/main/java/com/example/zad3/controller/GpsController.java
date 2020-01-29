@@ -15,9 +15,8 @@ public class GpsController {
 	GpsService gpsService;
 
 	@PostMapping(value = "/trackpoints")
-	public String newTrackpoint(@RequestBody Trackpoint trackpoint) {
-		gpsService.save(trackpoint);
-		return "ok";
+	public Trackpoint newTrackpoint(@RequestBody Trackpoint trackpoint) {
+		return gpsService.save(trackpoint);
 	}
 
 }

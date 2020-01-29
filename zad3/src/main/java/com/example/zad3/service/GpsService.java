@@ -14,10 +14,10 @@ public class GpsService {
 	@Autowired
 	TrackpointRepository trackpointRepository;
 
-	public void save(Trackpoint trackpoint) {
+	public Trackpoint save(Trackpoint trackpoint) {
 
 		trackpoint.setTimestamp(LocalDateTime.now());
-		trackpointRepository.save(trackpoint);
+		return trackpointRepository.save(trackpoint);
 	}
 
 }
